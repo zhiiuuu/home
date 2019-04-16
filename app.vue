@@ -6,7 +6,7 @@
 export default {
   mounted(){
     console.log('APP')
-    this.$_get('https://www.baidu.com').then(res => console.log(res)).catch(err => console.log(err))
+    //this.$_get('https://www.baidu.com').then(res => console.log(res)).catch(err => console.log(err))
   }
 }
 </script>

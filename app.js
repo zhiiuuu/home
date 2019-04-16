@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import App from './app.vue'
 import store from './store'
-import {install as Axios} from './api/install'
+//import {install as Axios} from './api/install'
 
-Vue.use(Axios)
+//Vue.use(Axios)
 
 export default class {
   constructor (components = {}, el = "#app") {

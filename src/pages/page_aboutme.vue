@@ -1,6 +1,9 @@
+/** 
+  关于我们页面
+*/
 <template lang="pug">
   div
-    h1 我是B页面
+    h1 我是Aboutme页面
 </template>
 
 <script>

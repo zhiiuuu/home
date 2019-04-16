@@ -11,16 +11,16 @@ module.exports = {
     clientLogLevel: "error",
     publicPath: "/",
     contentBase: path.resolve(__dirname, "../dist"),
-    proxy: {
-      "/comments": {
-        target: "https://m.weibo.cn",
-        changeOrigin: true,
-        logLevel: "debug",
-        headers: {
-          cookie: ""
-        }
-      }
-    },
+    // proxy: {
+    //   "/comments": {
+    //     target: "https://m.weibo.cn",
+    //     changeOrigin: true,
+    //     logLevel: "debug",
+    //     headers: {
+    //       cookie: ""
+    //     }
+    //   }
+    // },
   historyApiFallback: true
   },
   plugins: [

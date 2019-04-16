@@ -1,7 +1,9 @@
+/** 
+  我是生物多样性页面
+*/
 <template lang="pug">
   div
-    h1 我是A页面
-    img(src="")
+    h1 我是Biodiversity页面
 </template>
 
 <script>
@@ -10,16 +12,12 @@ export default {
     return {
 
     }
-  },
-  mounted(){
-    console.log('启动了2')
-    console.log('Apage')
   }
 }
 </script>
 
 <style lang="scss" scoped>
   h1{
-    color: brown;
+    color: red;
   }
 </style>
