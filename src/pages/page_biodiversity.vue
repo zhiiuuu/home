@@ -6,7 +6,7 @@
     div(class="biod_container")
       div(class="biod_box" v-for="item of kindList" v-bind:key="item.id")
         img(class="img_box" :src="item.imgURL")
-        p {{item.kindName}}
+        a(id="detail" :href="item.imgURL") {{item.kindName}}
     FooterTab    
 </template>
 <script>
@@ -64,10 +64,21 @@ export default {
   .biod_box{
     width:382px;
     height:465px;
-    margin-right:27px;
+    margin:0 13.5px 50px;
     background: #FFFFFF;
     box-shadow: 0 11px 37px 0 rgba(220,220,220,0.50);
     float:left;
     margin-bottom:50px;
+    cursor:pointer;
+  }
+  a{
+    display:block;
+    text-decoration:none;
+    font-family:PingFangSC-Semibold;
+    font-size:26px;
+    color: #2D2F29;
+    line-height:37px;
+    text-align:center;
+    margin-top:20px;
   }
 </style>
