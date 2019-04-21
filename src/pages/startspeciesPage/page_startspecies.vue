@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import FooterTab from './components/footer_tab.vue'
+import FooterTab from '../components/footer_tab.vue'
 export default {
   data: () => {
     return {
