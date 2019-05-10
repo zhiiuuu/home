@@ -1,0 +1,140 @@
+<template lang='pug'>
+    div(class='news_box')
+        div(class='news_title') 
+            div(class='news_title_box')
+                div(class="CH_title") 新闻动态
+                    p(class="EN_title") 
+                        i LATEST NEWS
+        div(class='news_group')
+            div(class='news_list')
+                div(class='news_list_img')
+                div(class='news_list_info')
+                    div(class='news_list_title')
+                        span(class='news_list_title_h') 新闻动态标题标题标题
+                        span(class='news_list_title_t') 2019-03-11 23:23
+                    div(class='news_list_msg') 
+                        p  天行长臂猿（学名：Hoolock tianxing）：成年天行长臂猿的体长600-900厘米，后足长140-153厘米，颅全长93-99厘米；体重6-8.5千克。雄性和雌性的体型差别不大，但雄性有长阴毛；对生而短的拇指；弯曲的手指悬挂时可牢固抓握。无尾。前肢明显长于后肢，用来悬挂和在树间荡臂。
+                    a(class='news_list_btn' href='#') 查看更多
+            div(class='news_list')
+                div(class='news_list_img')
+                div(class='news_list_info')
+                    div(class='news_list_title')
+                        span(class='news_list_title_h') 新闻动态标题标题标题
+                        span(class='news_list_title_t') 2019-03-11 23:23
+                    div(class='news_list_msg') 
+                        p  天行长臂猿（学名：Hoolock tianxing）：成年天行长臂猿的体长600-900厘米，后足长140-153厘米，颅全长93-99厘米；体重6-8.5千克。雄性和雌性的体型差别不大，但雄性有长阴毛；对生而短的拇指；弯曲的手指悬挂时可牢固抓握。无尾。前肢明显长于后肢，用来悬挂和在树间荡臂。
+                    a(class='news_list_btn' href='#') 查看更多
+
+</template>
+<script>
+export default {
+   name: 'latestnews' 
+}
+</script>
+<style lang="scss" scoped>
+    .news_box{
+        width: 100%;
+        height: 920px;
+    }
+    .news_title{
+        width: 100%;
+        height: 293px;
+    }
+    .news_title_box{
+        width: 1000px;
+        position: relative;
+        height: 293px;
+        margin: 0 auto;
+    }
+    .CH_title{
+        position: absolute;
+        top:131px;
+        width: 100%;
+        height: 56px;
+        text-align: center;
+        line-height: 56px;
+        font-family: PingFangSC-Semibold;
+        font-size: 40px;
+        color: #2D2F29;
+    }
+    .EN_title{
+        width: 100%;
+        height: 43px;
+        text-align: center;
+        line-height: 43px;
+        opacity: 0.93;
+        font-family: GillSans-SemiBoldItalic;
+        font-size: 36px;
+        color: #46787D;
+        letter-spacing: 0.6px;
+    }
+    .news_group{
+        width:1200px;
+        height: 475px;
+        margin: 0 auto;
+    }
+    .news_list{
+        width: 100%;
+        height: 186px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 103px;
+    }
+    .news_list_img{
+        width: 334px;
+        height: 186px;
+        background-image: url('../../../images/list_one.png');
+    }
+    .news_list_info{
+        width: 806px;
+        height: 186px;
+        margin-left:60px;
+    }
+    .news_list_title{
+        width: 100%;
+        height: 37px;
+        line-height: 37px;
+    }
+    .news_list_title_h{
+        display: block;
+        float:left;
+        font-family: PingFangSC-Semibold;
+        font-size: 26px;
+        color: #2D2F29;
+    }
+    .news_list_title_t{
+        display: block;
+        float:right;
+        font-family: PingFangSC-Semibold;
+        font-size: 14px;
+        color: #2D2F29;
+        text-align: right;
+    }
+    .news_list_msg{
+        width: 100%;
+        height: 71px;
+        margin-top: 10px;
+        font-family: PingFangSC-Regular;
+        font-size: 14px;
+        color: #9D9E9C;
+        line-height: 24px;
+    }
+    .news_list_msg p{
+        width: 798px;
+        height: 100%;
+    }
+    .news_list_btn{
+        display: block;
+        text-decoration: none;
+        width: 104px;
+        height: 33px;
+        background: #46787D;
+        color: #fff;
+        font-family: PingFangSC-Regular;
+        font-size: 12px;
+        text-align: center;
+        line-height: 33px;
+        margin-top: 38px;
+    }
+</style>

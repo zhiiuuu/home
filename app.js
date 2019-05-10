@@ -3,7 +3,13 @@
 import Vue from 'vue'
 import App from './app.vue'
 import store from './store'
+import VueLazyLoad from 'vue-lazyload'
 //import {install as Axios} from './api/install'
+import 'swiper/dist/css/swiper.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+Vue.use(VueLazyLoad)
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 //Vue.use(Axios)
 
@@ -20,7 +26,7 @@ export default class {
     new Vue({
       el: this.el,
       components: this.components,
-      store: store,
+      store: store
     })
   }
 }

@@ -6,7 +6,7 @@
     div(class="biod_container")
       div(class="biod_box" v-for="item of kindList" v-bind:key="item.id")
         img(class="img_box" :src="item.imgURL")
-        a(id="detail" :href="item.imgURL") {{item.kindName}}
+        a(id="detail" href="/bioddetailslist.html") {{item.kindName}}
     FooterTab    
 </template>
 <script>
