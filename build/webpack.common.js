@@ -159,6 +159,7 @@ const generateConfig = (isProd, isCompress) => {
     },
     resolve: {
       alias: {
+        "@src": path.resolve(__dirname, '../src'),
         'vue$': 'vue/dist/vue.esm.js',
         'vuex$': 'vuex/dist/vuex.min.js',
         'axios$': 'axios/dist/axios.min.js'
