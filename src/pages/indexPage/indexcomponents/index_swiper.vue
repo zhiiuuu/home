@@ -12,6 +12,8 @@
           .swiper-box-item-mirror(
             :style="{ backgroundImage: `url(${item})` }"
           )
+      .info-box
+
       .control-box
         .btn-box
           button(@click="propPage()") <
@@ -61,8 +63,9 @@
 <style lang='scss' scoped>
 .container{
   .banner-box{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    position: relative;
     .swiper-box{
       width: 100%;
       height: 100%;
@@ -130,8 +133,16 @@
         }
       }
     }
+    .info-box{
+      width: 30%;
+      height: 30%;
+      position: absolute;
+      left: 10%;
+      top: 20%;
+      border: 1px solid red;
+    }
     .control-box{
-      position: fixed;
+      position: absolute;
       z-index: 101;
       right: 0;
       bottom: 0;

@@ -1,7 +1,7 @@
 extends layers/layer.pug
 
 append title
-  = `我是首页`
+  = `高黎贡`
 prepend css
 
 prepend js
@@ -9,4 +9,6 @@ prepend js
 append js
 
 block content
+  nav-bar(current-page="index")
   Indexpage
+  

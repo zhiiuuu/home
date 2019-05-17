@@ -22,14 +22,19 @@ export default {
 	},
 	data() {
 		return {};
+
+	},
+	methods: {
+		handleScroll(e) {
+			console.log(e)
+		}
+	},
+	mounted() {
+		window.addEventListener('mousewheel',this.handleScroll,false)
 	}
 };
 </script>
 
 <style lang="scss" scoped>
-.slideShow {
-	width: 100%;
-	height: 900px;
-	background-image: url("http://w.wfjjt.top/slideShow.png");
-}
+
 </style>

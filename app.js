@@ -2,9 +2,11 @@
 
 import Vue from 'vue'
 import App from './app.vue'
+import NavBar from './src/pages/navbar.vue'
 import store from './store'
 import VueLazyLoad from 'vue-lazyload'
 //import {install as Axios} from './api/install'
+import './src/scss/animate.min.css'
 import 'swiper/dist/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
@@ -18,6 +20,7 @@ export default class {
     this.el = el,
     this.components = {
       App,
+      NavBar,
       ...components
     }
     this.mount()
