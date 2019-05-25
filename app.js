@@ -7,11 +7,8 @@ import store from './store'
 import VueLazyLoad from 'vue-lazyload'
 //import {install as Axios} from './api/install'
 import './src/scss/animate.min.css'
-import 'swiper/dist/css/swiper.css'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.use(VueLazyLoad)
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 //Vue.use(Axios)
 
