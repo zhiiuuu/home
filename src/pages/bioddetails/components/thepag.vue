@@ -1,6 +1,6 @@
 <template>
     <ul class='page'>
-        <li v-for="mark_item of listmark" :key="mark_item.id" :my_mark='mark_item.markers'>
+        <li class='li_style' v-for="mark_item of listmark" :key="mark_item.id" :my_mark='mark_item.markers'>
             <span class="product-mark">{{mark_item.title}}</span>
             <span class='mark-kind' :class="[mark_item.id == 1 ? greenColor : mark_item.id == 2 ? redColor : yellowColor]" v-for="mark of mark_item.markers" :key="mark.id">{{mark.mark}}</span>
         </li>
@@ -69,6 +69,12 @@ export default {
         margin:0 auto;
         margin-bottom: 20px;
     }
+    .li_style{
+        margin-bottom: 6px;
+    }
+    .li_style:last-child{
+        margin-bottom:0px;
+    }
     .product-mark{
         font-family: PingFangSC-Semibold;
         font-size: 16px;
@@ -76,7 +82,7 @@ export default {
         width: 64px;
         height: 22px;
         line-height: 22px;
-        font-weight: 500;
+        font-weight: 800;
     }
     .mark-kind{
         display:inline-block;
