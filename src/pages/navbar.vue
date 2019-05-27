@@ -5,24 +5,24 @@
       ul.nav-box-ul.animated(
         :class="[!isSearch ? 'fadeInUp' : 'fadeOutUp']"
       )
-        li.nav-box-li(:class="{active: currentPage=='index'}")
-          a.link(href="#")
-            span 首页
-        li.nav-box-li(:class="{active: currentPage=='starts'}")
-          a.link(href="#")
-            span 高黎贡的明星
-        li.nav-box-li(:class="{active: currentPage=='multiformity'}")
-          a.link(href="#")
-            span 生物多样性
-        li.nav-box-li(:class="{active: currentPage=='presentation'}")
-          a.link(href="#")
-            span 高黎贡山介绍
-        li.nav-box-li(:class="{active: currentPage=='videos'}")
-          a.link(href="#")
-            span 影视集锦
-        li.nav-box-li(:class="{active: currentPage=='aboutus'}")
-          a.link(href="#")
-            span 关于我们
+        li.nav-box-li(v-for="navli of navinfo" :key="navli.id" :class="{active: navli.currentPage=='index'}" )
+          a.link(:href="navli.url")
+            span {{navli.liTitle}}
+        //- li.nav-box-li(:class="{active: currentPage=='starts'}")
+        //-   a.link(href="#")
+        //-     span 高黎贡的明星
+        //- li.nav-box-li(:class="{active: currentPage=='multiformity'}")
+        //-   a.link(href="#")
+        //-     span 生物多样性
+        //- li.nav-box-li(:class="{active: currentPage=='presentation'}")
+        //-   a.link(href="#")
+        //-     span 高黎贡山介绍
+        //- li.nav-box-li(:class="{active: currentPage=='videos'}")
+        //-   a.link(href="#")
+        //-     span 豆瓣小组
+        //- li.nav-box-li(:class="{active: currentPage=='aboutus'}")
+        //-   a.link(href="http://localhost:8081/aboutme.html")
+        //-     span 关于我们
         li.nav-box-li
           span.link.search(@click="toggleSearchBox") 搜索
       .search-box.animated(
@@ -36,15 +36,53 @@
 
 <script>
 export default {
-  props: {
-    currentPage: {
-      type: String,
-      default: 'index'
-    }
-  },
+  // props: {
+  //   currentPage: {
+  //     type: String,
+  //     default: 'index'
+  //   }
+  // },
   data: () => {
     return {
-      isSearch: false
+      isSearch: false,
+      navinfo:[
+        {
+          id:1,
+          currentPage: 'index',
+          url: 'http://localhost:8081/index.html',
+          liTitle: '首页'
+        },
+        {
+          id:2,
+          currentPage: 'starts',
+          url: 'http://localhost:8081/startspecies.html',
+          liTitle: '高骊山的明星'
+        },
+        {
+          id:3,
+          currentPage: 'multiformity',
+          url: 'http://localhost:8081/biodiversity.html',
+          liTitle: '生物多样性'
+        },
+        {
+          id:4,
+          currentPage: 'presentation',
+          url: 'http://localhost:8081/gaoligong.html',
+          liTitle: '高黎贡山介绍'
+        },
+         {
+          id:5,
+          currentPage: 'doubangroup',
+          url: 'https://www.douban.com/group/662229/',
+          liTitle: '豆瓣小组'
+        },
+        {
+          id:6,
+          currentPage: 'aboutus',
+          url: 'http://localhost:8081/aboutme.html',
+          liTitle: '关于我们'
+        }
+      ]
     }
   },
   mounted() {
@@ -83,7 +121,7 @@ export default {
     position: relative;
     &-ul{
       position: absolute;
-      letf: 0;
+      left: 0;
       top: 0;
       width: 96%;
       height: 100%;
