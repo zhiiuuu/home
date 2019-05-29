@@ -15,9 +15,21 @@ const ROOT_PATH = path.resolve(__dirname, '..')
 const ENTRY_PATH = path.resolve(__dirname, '../src/js/')
 const PAGES_PATH = path.resolve(__dirname, '../views/')
 
-const entries = () => {
+const entriesJs = [
+  // 'aboutme.js',
+  // 'bioddetails.js',
+  // 'bioddetailslist.js',
+  // 'biodiversity.js',
+  // 'films.js',
+  // 'gaoligong.js',
+  // 'gaoligongprotect.js',
+  'index.js',
+  // 'startspecies.js',
+]
+
+const entries = (entriesArray) => {
   let jsPaths = {}
-  let files = fs.readdirSync(ENTRY_PATH)
+  let files = entriesArray ? entriesArray : fs.readdirSync(ENTRY_PATH)
   for (let file of files){
     if(fs.statSync(path.join(ENTRY_PATH, file)).isFile()){
       let name = path.parse(file).name
@@ -150,7 +162,7 @@ const generateConfig = (isProd, isCompress) => {
 
   return {
     mode: isProd ? 'production' : 'development',
-    entry: entries(),
+    entry: entries(entriesJs),
     output: {
       path: path.resolve(ROOT_PATH, 'dist'),
       publicPath: './',
