@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-    name: 'details',
+    name: 'Details',
     data() {
         return {
             
