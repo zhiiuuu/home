@@ -8,19 +8,15 @@ module.exports = {
     port:8081,
     hot: true,
     overlay: true,
-    clientLogLevel: "error",
+    // clientLogLevel: "error",
     publicPath: "/",
     contentBase: path.resolve(__dirname, "../dist"),
-    // proxy: {
-    //   "/comments": {
-    //     target: "https://m.weibo.cn",
-    //     changeOrigin: true,
-    //     logLevel: "debug",
-    //     headers: {
-    //       cookie: ""
-    //     }
-    //   }
-    // },
+    proxy: {
+      "/api": {
+        target: "http://47.96.116.169:80",
+        changeOrigin: true
+      }
+    },
   historyApiFallback: true
   },
   plugins: [

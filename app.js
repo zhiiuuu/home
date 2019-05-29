@@ -5,12 +5,12 @@ import App from './app.vue'
 import NavBar from './src/pages/navbar.vue'
 import store from './store'
 import VueLazyLoad from 'vue-lazyload'
-//import {install as Axios} from './api/install'
+import {install as Axios} from './api/install'
 import './src/scss/animate.min.css'
 
 Vue.use(VueLazyLoad)
 
-//Vue.use(Axios)
+Vue.use(Axios)
 
 export default class {
   constructor (components = {}, el = "#app") {

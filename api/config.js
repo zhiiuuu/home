@@ -2,7 +2,7 @@ import axios from 'axios'
 import Cache from './cache'
 
 axios.defaults.withCredentials = true
-axios.defaults.baseUrl = process.env.NODE_ENV === 'production' ? '' : '/api'
+// axios.defaults.baseUrl = process.env.NODE_ENV === 'production' ? '' : '/api'
 axios.defaults.headers.post['Content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 

@@ -3,10 +3,11 @@
     slot
 </template>
 <script>
+import * as API from './api'
 export default {
   mounted(){
     console.log('APP')
-    //this.$_get('https://www.baidu.com').then(res => console.log(res)).catch(err => console.log(err))
+    this.$_get(API.CMS_DATA).then(res => console.log(res)).catch(err => console.log(err))
   }
 }
 </script>

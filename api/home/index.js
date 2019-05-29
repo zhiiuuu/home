@@ -1,1 +1,1 @@
-export const CMS_DATA = '/home/api'
+export const CMS_DATA = '/api/news'
