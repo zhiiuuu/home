@@ -8,11 +8,7 @@ export const post = (url, data, extend = {isJson: true, cache: false}) => {
     data: extend.isJson ? data : qs.stringify(data)
   }
   let config = {...defaultConfig, ...extend}
-  return axios(config).then(res => {
-    Promise.resolve(res)
-  }, err => {
-    Promise.reject(err)
-  })
+  return axios(config)
 }
 
 export const get = (url, data, extend = {cache: false}) => {
@@ -22,9 +18,5 @@ export const get = (url, data, extend = {cache: false}) => {
     params: data
   }
   let config = {...defaultConfig, ...extend}
-  return axios(config).then(res => {
-    Promise.resolve(res)
-  }, err => {
-    Promise.reject(err)
-  })
+  return axios(config)
 }
