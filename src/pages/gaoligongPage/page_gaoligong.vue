@@ -8,20 +8,21 @@
       div(class='gaoligong_title') 高黎贡山生态系统总览
       div(class='gaoligong_msg' v-html="gaoligong_msg")
       div(class='gaoligong_group')
-          div(class="gaoligong_list_box")
-            img(class="img_box" src="../../../src/images/bird1.png")
-            a(id="detail" href="#") 生态系统
+          div(class="gaoligong_list_box" v-for='(gaoItem,index) of gaoligong_data.children' :key='index')
+            img(class="img_box" :src="gaoItem.imgUrl")
+            a(id="detail" href="#") {{gaoItem.name}}
 
-          div(class="gaoligong_list_box")
-            img(class="img_box" src="../../../src/images/bird1.png")
-            a(href="/gaoligongprotect.html") 保护工作 
-          div(class="gaoligong_list_box")
-            img(class="img_box" src="../../../src/images/bird1.png")
-            a(id="detail" href="#") 历史人文
+          //- div(class="gaoligong_list_box")
+          //-   img(class="img_box" src="../../../src/images/bird1.png")
+          //-   a(href="/gaoligongprotect.html") 保护工作 
+          //- div(class="gaoligong_list_box")
+          //-   img(class="img_box" src="../../../src/images/bird1.png")
+          //-   a(id="detail" href="#") 历史人文
     FooterTab    
 </template>
 <script>
 import FooterTab from '../components/footer_tab.vue'
+import * as API from '../../../api/gaoligong'
 
 const msg = `<p>气候年均温15左右，谷地因焚风作用而形成干热气候，山顶部气候恶劣，温度低；年降水量东西坡虽有差异，但均在3000毫米以上，迎风面降水较多，两坡均随海拔高度的升高而递增，山顶降水最多可达3600毫米。</p>
 <p>因怒江切割较深，故相对高度甚大，山势陡峻而险要，是地壳抬升后受河流分割而成的断块山地，多为变质岩组成，下部有大面积的岩浆岩分布。
@@ -36,8 +37,18 @@ export default {
       },
   data: () => {
     return {
-      gaoligong_msg: msg
+      gaoligong_msg: msg,
+      gaoligong_data: {}
     }
+  },
+  mounted(){
+    console.log("hello,i am gaoligong")
+    this.$_get(API.GAOLIGONG_DATA)
+    .then(res => {
+      //console.log(res.data)
+      this.gaoligong_data = res.data
+    })
+    .catch(err => {console.log(err)})
   }
 }
 </script>

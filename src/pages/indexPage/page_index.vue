@@ -9,24 +9,23 @@
 		div.index(:style="indexStyle")
 			IndexSwiper.index-section(:style="sectionStyle")
 			FlagshipSpecies.index-section(:style="sectionStyle")
-			LatestNews.index-section(:style="sectionStyle")
-			PartNers.index-section(:style="sectionStyle")
-			FooterTab.index-section(:style="sectionStyle")
+			LatestNews.index-section(:style="sectionStyle" :news_data='news_data' :totalPages='Math.ceil(news_data.total / 2)' :current-page='currentPage' @pagechanged='handleChange')
+			PartNers.index-section(:style="sectionStyle" :partners_data='partners_data')
 </template>
 <script>
-import FooterTab from "../components/footer_tab.vue";
 import FlagshipSpecies from "./indexcomponents/flagship_species.vue";
 import LatestNews from "./indexcomponents/latest_news.vue";
 import PartNers from "./indexcomponents/partners.vue";
 import IndexSwiper from "./indexcomponents/index_swiper.vue";
 import { clearTimeout, setTimeout } from 'timers';
+
+import * as API from '../../../api'
 export default {
 	components: {
 		IndexSwiper,
 		FlagshipSpecies,
 		LatestNews,
-		PartNers,
-		FooterTab
+		PartNers
 	},
 
 	computed: {
@@ -53,6 +52,8 @@ export default {
 			scrollTime: 0,
 			scrollDaly: 500,
 			currentIndex: 0,
+			news_data:{},
+			currentPage: 1
 		};
 
 	},
@@ -76,11 +77,26 @@ export default {
 				return false;
 			}
 		},
+		handleChange: function (page) {
+       		this.currentPage = page;
+      	}
 		
 	},
 	mounted() {
 		console.log(this.getViewPortHeight);
 		window.addEventListener('mousewheel',this.handleScroll, false);
+		this.$_get(API.PARTNERS_DATA)
+		.then(res => {
+			this.partners_data = res.data
+		})
+		.catch(err => {console.log(err)});
+
+		this
+		.$_get(API.TEST_DATA)
+		.then((res) => {
+			this.news_data = res.data
+		})
+		.catch(err => console.log(err))
 	}
 };
 </script>

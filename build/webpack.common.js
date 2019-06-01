@@ -16,15 +16,15 @@ const ENTRY_PATH = path.resolve(__dirname, '../src/js/')
 const PAGES_PATH = path.resolve(__dirname, '../views/')
 
 const entriesJs = [
-  // 'aboutme.js',
-  // 'bioddetails.js',
-  // 'bioddetailslist.js',
-  // 'biodiversity.js',
-  // 'films.js',
-  // 'gaoligong.js',
-  // 'gaoligongprotect.js',
+  'aboutme.js',
+  'bioddetails.js',
+  'bioddetailslist.js',
+  'biodiversity.js',
+  'films.js',
+  'gaoligong.js',
+  'gaoligongprotect.js',
   'index.js',
-  // 'startspecies.js',
+  'startspecies.js',
 ]
 
 const entries = (entriesArray) => {

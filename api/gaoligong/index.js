@@ -1,0 +1,1 @@
+export const GAOLIGONG_DATA = '/api/background-info'

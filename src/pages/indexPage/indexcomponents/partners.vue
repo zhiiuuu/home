@@ -1,4 +1,5 @@
 <template lang="pug">
+.container
 	div(class='partners_box')
 		div(class='partners_title')
 			div(class='partners_title_box')
@@ -6,22 +7,19 @@
 					p(class="EN_title") 
 						i PARTNERS
 		div(class='partners_group')
-			div(class='partners_list')
-				img(class='partners_list_img' src='http://w.wfjjt.top/logo1.png')
-			div(class='partners_list')
-				img(class='partners_list_img' src='http://w.wfjjt.top/logo2.png')
-			div(class='partners_list')
-				img(class='partners_list_img' src='http://w.wfjjt.top/logo3.png')
-			div(class='partners_list')
-				img(class='partners_list_img' src='http://w.wfjjt.top/logo4.png')
-			div(class='partners_list')
-				img(class='partners_list_img' src='http://w.wfjjt.top/logo5.png')
-			div(class='partners_list')
-				img(class='partners_list_img' src='http://w.wfjjt.top/logo6.png')
+			div(class='partners_list' v-for='partners of partners_data')
+				a(:href='partners.link')
+					img(class='partners_list_img' :src='partners.imgUrl' :alt='partners.description')
+	footer-tab
 </template>
 <script>
+import FooterTab from '../../components/footer_tab.vue'
 export default {
-	name: 'partners'
+	name: 'partner',
+	props: ['partners_data'],
+	components:{
+		FooterTab
+	}
 }
 </script>
 <style lang="scss" scoped>
