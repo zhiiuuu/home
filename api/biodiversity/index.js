@@ -1,1 +1,1 @@
-export const BIODIVERSITY_DATA = '/api/biodiversity/list'
+export const BIODIVERSITY_DATA = '/api/species'

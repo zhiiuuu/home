@@ -4,9 +4,9 @@
 <template lang="pug">
   div
     div(class="biod_container")
-      div(class="biod_box" v-for="(item, index) of kindList" v-if="index < 6" v-bind:key="item.id")
+      div(class="biod_box" v-for="(item, index) of kindList" v-bind:key="item.id")
         img(class="img_box" :src="item.thumbnail && item.thumbnail.indexOf('http') !== -1 ? item.thumbnail : 'http://w.wfjjt.top/bird.png' ")
-        a(id="detail" href="/bioddetailslist.html") {{ item.name }}
+        a(id="detail" href=`/bioddetailslist.html` ) {{ item.title }}
     FooterTab    
 </template>
 <script>
@@ -55,7 +55,7 @@ export default {
   created() {
     this.$_get(API.BIODIVERSITY_DATA).then(res => {
       if(!res.data.isError){
-        this.kindList = res.data.dateList;
+        this.kindList = res.data;
       }
     })
   }
