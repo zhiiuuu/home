@@ -1,0 +1,1 @@
+export const BIODIVERSITY_DATA = '/api/biodiversity/list'

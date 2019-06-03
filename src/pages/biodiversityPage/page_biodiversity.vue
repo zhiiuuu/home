@@ -4,13 +4,14 @@
 <template lang="pug">
   div
     div(class="biod_container")
-      div(class="biod_box" v-for="item of kindList" v-bind:key="item.id")
-        img(class="img_box" :src="item.imgURL")
-        a(id="detail" href="/bioddetailslist.html") {{item.kindName}}
+      div(class="biod_box" v-for="(item, index) of kindList" v-if="index < 6" v-bind:key="item.id")
+        img(class="img_box" :src="item.thumbnail && item.thumbnail.indexOf('http') !== -1 ? item.thumbnail : 'http://w.wfjjt.top/bird.png' ")
+        a(id="detail" href="/bioddetailslist.html") {{ item.name }}
     FooterTab    
 </template>
 <script>
 import FooterTab from '../components/footer_tab.vue'
+import * as API from '../../../api/biodiversity'
 export default {
   components:{
         FooterTab
@@ -50,6 +51,13 @@ export default {
         }
       ]
     }
+  },
+  created() {
+    this.$_get(API.BIODIVERSITY_DATA).then(res => {
+      if(!res.data.isError){
+        this.kindList = res.data.dateList;
+      }
+    })
   }
 }
 </script>
