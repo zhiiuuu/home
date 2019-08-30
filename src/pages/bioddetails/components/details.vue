@@ -16,9 +16,9 @@ export default {
 </script>
 <style lang="scss" scoped>
     .details_box{
-        width: 1200px;
+        width: 62.5%;
         height: auto;
-        margin: 30px auto 0px;
+        margin: 100px auto 0px;
     }
     .details_title{
         width: auto;
@@ -29,7 +29,7 @@ export default {
         height: 48px;
         line-height: 48px;
         font-family: PingFangSC-Semibold;
-        font-size: 34px;
+        font-size: 30px;
         color: #2D2F29;
         margin-right: 20px;
         letter-spacing: 0.1;
@@ -39,7 +39,7 @@ export default {
         line-height: 48px;
         opacity: 0.71;
         font-family: CenturyGothic-Italic;
-        font-size: 33px;
+        font-size: 29px;
         color: #46787D;
     }
 </style>

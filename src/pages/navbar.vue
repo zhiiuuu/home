@@ -5,33 +5,33 @@
       ul.nav-box-ul.animated(
         :class="[!isSearch ? 'fadeInUp' : 'fadeOutUp']"
       )
-        li.nav-box-li(:class="{active: currentPage=='index'}")
-          a.link(href="http://localhost:8081/")
+        li.nav-box-li(:class="{navboxlinew: navboxlinew,active: currentPage=='index'}")
+          a.link(:style='color',href="http://localhost:8081/")
             span 首页
-        li.nav-box-li(:class="{active: currentPage=='starts'}")
-          a.link(href="http://localhost:8081/startspecies.html")
+        li.nav-box-li(:class="{navboxlinew: navboxlinew,active: currentPage=='starts'}")
+          a.link(:style='color',href="http://localhost:8081/startspecies.html")
             span 高黎贡的明星
-        li.nav-box-li(:class="{active: currentPage=='multiformity'}")
-          a.link(href="http://localhost:8081/biodiversity.html")
+        li.nav-box-li(:class="{navboxlinew: navboxlinew,active: currentPage=='multiformity'}")
+          a.link(:style='color',href="http://localhost:8081/biodiversity.html")
             span 生物多样性
-        li.nav-box-li(:class="{active: currentPage=='presentation'}")
-          a.link(href="http://localhost:8081/gaoligong.html")
+        li.nav-box-li(:class="{navboxlinew: navboxlinew,active: currentPage=='presentation'}")
+          a.link(:style='color',href="http://localhost:8081/gaoligong.html")
             span 高黎贡山介绍
-        li.nav-box-li(:class="{active: currentPage=='videos'}")
-          a.link(href="https://www.douban.com/group/662229/")
+        li.nav-box-li(:class="{navboxlinew: navboxlinew,active: currentPage=='videos'}")
+          a.link(:style='color',href="https://www.douban.com/group/662229/")
             span 豆瓣小组
-        li.nav-box-li(:class="{active: currentPage=='aboutus'}")
-          a.link(href="http://localhost:8081/aboutme.html")
+        li.nav-box-li(:class="{navboxlinew: navboxlinew,active: currentPage=='aboutus'}")
+          a.link(:style='color',href="http://localhost:8081/aboutme.html")
             span 关于我们
-        li.nav-box-li
-          span.link.search(@click="toggleSearchBox") 搜索
+        li.nav-box-li(:class="{navboxlinew: navboxlinew}")
+          span.link.search(@click="toggleSearchBox",:style='color') 搜索
       .search-box.animated(
         :class="[isSearch ? 'fadeInUp' : 'fadeOutUp']"
       )
         .search-box-input
           input(placeholder="关于高黎贡山的一切")
           span.search-btn 搜索
-        .button(@click="toggleSearchBox") 返回导航
+        .button(:style='color',@click="toggleSearchBox") 返回导航
 </template>
 
 <script>
@@ -39,16 +39,23 @@ export default {
   props: {
     currentPage: {
       type: String,
-      default: 'index'
+      default: 'index',
     }
   },
   data: () => {
     return {
-      isSearch: false
+      isSearch: false,
+      color:{'color':'#000'},
+      border:'false',
+      navboxlinew:false
     }
   },
   mounted() {
-    console.log(this.currentPage);
+    // console.log(this.currentPage);
+    if(this.currentPage=='starts' || this.currentPage=='presentation' || this.currentPage=='index'){
+      this.color = 'color:#fff';
+      this.navboxlinew = true;
+    }
   },
   methods: {
     toggleSearchBox() {
@@ -83,7 +90,7 @@ export default {
     position: relative;
     &-ul{
       position: absolute;
-      letf: 0;
+      left: 0;
       top: 0;
       width: 96%;
       height: 100%;
@@ -103,7 +110,6 @@ export default {
           display: flex;
           align-items: center;
           height: 100%;
-          color: #fff;
           font-size: 12px;
           box-sizing: border-box;
           border-bottom: 2x solid rgba(255, 255, 255, 0);
@@ -113,12 +119,22 @@ export default {
       .nav-box-li:hover{
         .link{
           font-size: 14px;
+          border-bottom: 2px solid #000;
+        }
+      }
+      .navboxlinew:hover{
+        .link{
           border-bottom: 2px solid #fff;
         }
       }
       .nav-box-li.active{
         .link{
           font-size: 14px;
+          border-bottom: 2px solid #000;
+        }
+      }
+      .navboxlinew.active{
+        .link{
           border-bottom: 2px solid #fff;
         }
       }
@@ -158,7 +174,7 @@ export default {
         }
       }
       .button{
-        color: #fff;
+        color: #000;
         cursor: pointer;
         font-size: 14px;
       }

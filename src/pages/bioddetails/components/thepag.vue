@@ -64,7 +64,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .page{
-        width: 1200px;
+        width: 62.5%;
         height: auto;
         margin:0 auto;
         margin-bottom: 20px;

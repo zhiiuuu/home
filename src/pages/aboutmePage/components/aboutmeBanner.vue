@@ -29,18 +29,18 @@ export default {
   name: "aboutmePage",
   data() {
     return {
-			hiddenLeftSlideStatus: false,
-			hiddenRightSlideStatus: false
-		};
+      hiddenLeftSlideStatus: false,
+      hiddenRightSlideStatus: false
+    };
   },
-	methods: {
-		overLeftSlide() {
-			this.hiddenLeftSlideStatus = !this.hiddenLeftSlideStatus
-		},
-		overRightSlide() {
-			this.hiddenRightSlideStatus = !this.hiddenRightSlideStatus
-		}
-	}
+  methods: {
+    overLeftSlide() {
+      this.hiddenLeftSlideStatus = !this.hiddenLeftSlideStatus;
+    },
+    overRightSlide() {
+      this.hiddenRightSlideStatus = !this.hiddenRightSlideStatus;
+    }
+  }
 };
 </script>
 
@@ -57,63 +57,63 @@ body {
   position: relative;
   overflow: hidden;
 }
-.section-modal{
-	position: absolute;
-	top: 0;
-	width: 50vw;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0);
-	z-index: 3;
+.section-modal {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 3;
 }
-.section-left-modal{
-	left: 0;
+.section-left-modal {
+  left: 0;
 }
-.section-right-modal{
-	right: 0;
+.section-right-modal {
+  right: 0;
 }
 .section-left {
-	z-index: 2;
+  z-index: 2;
   position: absolute;
   width: 100%;
   height: 200%;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   top: -40px;
-  left: -111%;
+  left: -112%;
   transform: rotate(-33deg);
-	transition: left 0.3s ease-in-out;
-	& > .title-logo{
-		position: absolute;
-		left: 45%;
-		top: 31%;
-		color: #fff;
-		transform: rotate(33deg);
-		& > span{
-			display: inline-block;
-			font-size: 65px;
-			vertical-align: middle;
-			margin-right: 30px;
-		}
-		& > img{
-			width: 235px;
-			height: 89px;
-			vertical-align: middle;
-		}
-		& > .desc-content{
-			font-size: 35px;
-			margin-top: 50px;
-			line-height: 70px;
-		}
-	}
+  transition: left 0.3s ease-in-out;
+  & > .title-logo {
+    position: absolute;
+    left: 52%;
+    top: 21%;
+    color: #fff;
+    transform: rotate(33deg);
+    & > span {
+      display: inline-block;
+      font-size: 55px;
+      vertical-align: middle;
+      margin-right: 30px;
+    }
+    & > img {
+      width: 235px;
+      height: 89px;
+      vertical-align: middle;
+    }
+    & > .desc-content {
+      font-size: 20px;
+      margin-top: 50px;
+      line-height: 48px;
+    }
+  }
 }
-.section-left.active{
-	left: -32%;
+.section-left.active {
+  left: -21%;
 }
-.section-right.active{
-	right: -32%;
+.section-right.active {
+  right: -34%;
 }
 .section-right {
-	z-index: 2;
+  z-index: 2;
   position: absolute;
   width: 100%;
   height: 200%;
@@ -122,35 +122,36 @@ body {
   top: -100%;
   right: -111%;
   transform: rotate(-33deg);
-	transition: right 0.3s ease-in-out;
-	& > .title-logo{
-		position: absolute;
-		left: 10%;
-		top: 48%;
-		color: #fff;
-		transform: rotate(33deg);
-		width: 800px;
-		& > span{
-			display: block;
-			font-size: 65px;
-			width: 500px;
-			position: relative;
-			left: 150px;
-		}
-		& > img{
-			width: 159px;
-			height: 171px;
-			vertical-align: middle;
-			margin-left: 30px;
-			position: relative;
-			left: 200px;
-			top: 50px;
-		}
-		& > .desc-content{
-			font-size: 35px;
-			margin-top: 50px;
-			line-height: 70px;
-		}
-	}
+  transition: right 0.3s ease-in-out;
+  & > .title-logo {
+	position: absolute;
+    left: 4%;
+    top: 46%;
+    color: #fff;
+    transform: rotate(33deg);
+    width: 625px;
+    & > span {
+		display: block;
+		font-size: 55px;
+		width: 386px;
+		position: relative;
+		left: 150px;
+		margin-top: 30px;
+    }
+    & > img {
+      width: 159px;
+      height: 171px;
+      vertical-align: middle;
+      margin-left: 30px;
+      position: relative;
+      left: 200px;
+      top: 50px;
+    }
+    & > .desc-content {
+      font-size: 20px;
+      margin-top: 50px;
+      line-height: 48px;
+    }
+  }
 }
 </style>

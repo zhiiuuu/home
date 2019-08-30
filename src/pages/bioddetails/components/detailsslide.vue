@@ -14,6 +14,9 @@
           </div>
         </swiper-slide>
       </swiper>
+      <!-- 前后进退按钮 -->
+      <!-- <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
   </div>
 </template>
 
@@ -32,14 +35,18 @@ export default {
         spaceBetween: 10,
         effect: 'fade',
         loop: true,
-        loopedSlides: 5
+        loopedSlides: 4
       },
       swiperOptionThumbs: {
         spaceBetween: 18,
-        slidesPerView: 5,
+        slidesPerView: 4,
         slideToClickedSlide: true,
         loop: true,
-        loopedSlides: 5,//looped slides should be the same
+        loopedSlides: 4,//looped slides should be the same
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       },
       swiperImg:[
         {
@@ -88,33 +95,32 @@ export default {
 
 <style scoped>
   .swiper-container{
-    background-color:#fff;
   }
   .gallery-top {
-    height: 660px!important;
-    width: 1200px;
+    width: 62.5%;
     margin:0 auto;
   }
   .gallery-top .swiper-slide img{
-    width:100%;
-    height:100%;
+    width:824px;
+    height:509px;
+    display: block;
   }
   .gallery-thumbs {
-    height: 154px!important;
     box-sizing: border-box;
-    width: 1200px;
+    width: 62.5%;
     margin-top: 40px;
     margin-bottom: 32px;
   }
   .gallery-thumbs .swiper-slide {
-    width: 226px;
-    height: 154px;
+    width: 100%;
+    height: 120px;
     cursor: pointer;
     opacity:0.6;
   }
   .gallery-thumbs .swiper-slide img{
-    width:226px;
-    height:154px;
+    width:178px;
+    height:120px;
+    display: block;
   }
   .gallery-thumbs .swiper-slide-active{
     opacity: 1;

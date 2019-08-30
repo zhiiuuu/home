@@ -24,7 +24,7 @@ export default {
     return {
       one_shade:true,
       current:null,
-      buttonMsg:"查看更多",
+      buttonMsg:"查看更多 >",
       imgList:[
         {
           id:"001",
@@ -72,14 +72,18 @@ export default {
 <style lang="scss" scoped>
   .box_container{
     width:100%;
-    height:1080px;
     display: flex;
   }
   .pic_box{
     flex:1; 
   }
   .pic_one{
+    width: 25%;
     position:relative;
+    img{
+      width: 100%;
+      display: block;
+    }
   }
   .pic_one > .pic_one_shade{
     position:absolute;
@@ -92,24 +96,22 @@ export default {
   .titleText{
     display: block;
     font-family: PingFangSC-Semibold;
-    font-size: 40px;
+    font-size: 25px;
     color: #FFFFFF;
     height:56px;
     line-height:56px;
     text-align:center;
-    margin-top:340px;
-    margin-bottom:80px;
+    margin-top:200px;
+    margin-bottom:40px;
   }
   .img_desc{
-    width:360px;
-    height:192px;
     font-family: PingFangSC-Regular;
-    font-size: 14px;
+    font-size: 13px;
     color: #9D9E9C;
-    line-height: 24px;
     margin:0 auto;
     line-height: 24px;
     margin-bottom:60px;
+    padding:0 30px;
   }
   .button_more{
     display:block;

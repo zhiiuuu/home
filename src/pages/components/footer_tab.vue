@@ -18,9 +18,9 @@ export default {
     background-color: #46787D;
     width:100%;
     height:90px;
-    }
+  }
   .footer_msg{
-    width:1200px;
+    width:62.5%;
     height: 100%;
     margin:0 auto;
     color:white;
@@ -29,7 +29,7 @@ export default {
   }
   .left_msg{
     float:left;
-    width:677px;
+    width:60%;
     height:44px;
     margin-top:23px;
    
@@ -39,7 +39,7 @@ export default {
   }
   .right_msg{
     float:right;
-    width:397px;
+    width:40%;
     height:44px;
     margin-top:23px;
     text-align: right;

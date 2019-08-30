@@ -1,6 +1,6 @@
 <template lang='pug'>
     div
-        HeaderTab
+        //- HeaderTab
         BiodListDetails
         FooterTab
 </template>

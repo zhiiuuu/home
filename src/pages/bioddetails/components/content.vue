@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .comtent_box{
-        width: 1200px;
+        width: 62.5%;
         height: auto;
         margin:0 auto;
     }

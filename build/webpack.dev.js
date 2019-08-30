@@ -8,6 +8,10 @@ module.exports = {
     port:8081,
     hot: true,
     overlay: true,
+    /**
+     * 能使花生壳访问
+     */
+    disableHostCheck: true,
     // clientLogLevel: "error",
     publicPath: "/",
     contentBase: path.resolve(__dirname, "../dist"),

@@ -11,11 +11,12 @@
             v-on:mouseleave="leave()"
             )
                 img(:src="item.imgURL")
-                div(v-show="one_shade && index == current" class="list_img_shade")
-                    span(class="titleText") {{item.imgTitle}}
-                    span(class="img_desc") {{item.imgMsg}}
-                    span(class="t")
-                    a(class='btn' href='/bioddetails.html' ) {{btn_msg}}
+                a(class='btn' href='/bioddetails.html' v-show="one_shade && index == current")
+                  div(class="list_img_shade")
+                      span(class="titleText") {{item.imgTitle}}
+                      span(class="img_desc") {{item.imgMsg}}
+                      //- span(class="t") 省略号
+                      //- a(class='btn' href='/bioddetails.html' ) 查看详情按钮
                     
 </template>
 <script>
@@ -137,9 +138,8 @@ export default {
       this.$_get(API.BIODIVERSITY_DETAIL_LIST_DATA, {
         speciesId: this.getQueryVariable("id")
       }).then(res => {
-        console.log(res)
         if (!res.data.isError) {
-          this.kindList = res.data;
+          // this.list_details = res.data;
         }
       });
     }
@@ -149,9 +149,10 @@ export default {
 
 <style lang="scss">
 .biod_list_box {
-  width: 1200px;
+  width: 62.5%;
   height: auto;
   margin: 0 auto;
+  margin-top: 100px;
 }
 .biod_list_title {
   width: 172px;
@@ -159,81 +160,65 @@ export default {
 }
 .title-CN {
   font-family: PingFangSC-Semibold;
-  font-size: 34px;
+  font-size: 30px;
   color: rgb(45, 47, 41);
   letter-spacing: 2px;
 }
 .title-EN {
   font-family: CenturyGothic;
-  font-size: 34px;
+  font-size: 30px;
   color: rgb(70, 120, 125);
   letter-spacing: 2px;
   line-height: 48px;
 }
 .biod_list_img {
-  width: 1200px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  position: relative;
   margin-bottom: 114px;
+  justify-content: space-between;
+  .list_img {
+    position: relative;
+    width: 23.5%;
+    margin-top: 19px;
+    img{
+      width: 100%;
+      vertical-align:top;
+    }
+    .list_img_shade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.75);
+      cursor: pointer;
+    }
+  }
 }
-.list_img {
-  position: relative;
-  width: 285px;
-  height: 285px;
-  margin-top: 20px;
-  margin-right: 20px;
-}
-.list_img:nth-child(4) {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin-right: 0;
-}
-.list_img:nth-child(8) {
-  position: absolute;
-  top: 305px;
-  right: 0px;
-  margin-right: 0;
-}
-.list_img:nth-child(12) {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  margin-right: 0;
-}
-.list_img img {
-  width: 285px;
-  height: 285px;
-}
-.list_img_shade {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba($color: #000000, $alpha: 0.75);
-}
+
+
 .titleText {
   display: block;
   font-family: PingFangSC-Semibold;
-  font-size: 24px;
+  font-size: 20px;
   color: #ffffff;
-  margin-top: 77px;
+  margin-top: 50px;
   margin-bottom: 20px;
   text-align: center;
 }
 .img_desc {
   display: block;
   overflow: hidden;
-  width: 230px;
-  height: 72px;
+  padding: 0 15px;
+  text-align:center;
   font-family: PingFangSC-Regular;
-  font-size: 14px;
+  font-size: 12px;
   color: rgba(#ffffff, 0.7);
-  line-height: 24px;
+  height: 54px;
   margin: 0 auto;
+  line-height: 18px;
 }
 .t:after {
   width: 20px;
@@ -245,15 +230,6 @@ export default {
 }
 .btn {
   display: block;
-  text-decoration: none;
-  width: 104px;
-  height: 30px;
-  background: #46787d;
-  color: #fff;
-  font-family: PingFangSC-Regular;
-  font-size: 12px;
-  text-align: center;
-  line-height: 30px;
-  margin: 20px auto;
+  
 }
 </style>
